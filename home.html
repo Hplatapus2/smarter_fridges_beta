@@ -4,7 +4,7 @@
     <title>Smarter Fridges</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./W3.css">
+    <link rel="stylesheet" href="./hcss.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -20,7 +20,7 @@
     .bgimg-1 {
       background-position: center;
       background-size: cover;
-      background-image: url("https://www.jbhifi.com.au/cdn/shop/products/523201-Product-0-I-637741143759267611_d4dbb8ae-927b-42d6-8697-80441ea79ab6.jpg?v=1675673512");
+      background-image: url("https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/361665018_751702070291552_1805153349135859112_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=DBlBZEnSD3sAX_p1MPY&_nc_ht=scontent-syd2-1.xx&oh=00_AfDyHSdj9PWVF3jiibS0mPP_hGP3vBJKp7D8PvLWefTSlQ&oe=64E28DF9");
       min-height: 100%;
     }
 
@@ -29,7 +29,8 @@
     height: 360;
     }
 
-    .w3-bar .w3-button {
+
+    .hcss-bar .hcss-button {
       padding: 16px;
     }
   .material-symbols-outlined {
@@ -38,6 +39,46 @@
     'wght' 400,
     'GRAD' 0,
     'opsz' 48
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
     </style>
   </head>
@@ -54,72 +95,99 @@
 
 <body>
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDe-ViJfViDvaAlYFtaQnxt3QDss0zfOw",
+    authDomain: "smarter-fridges.firebaseapp.com",
+    projectId: "smarter-fridges",
+    storageBucket: "smarter-fridges.appspot.com",
+    messagingSenderId: "803833459732",
+    appId: "1:803833459732:web:fdf371fd5ad38aa168e301",
+    measurementId: "G-KM90FT00VE"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="./logo3.png"></a>
+<div class="hcss-top">
+  <div class="hcss-bar hcss-white hcss-card" id="myNavbar">
+    <a href="#home" class="hcss-bar-item hcss-button hcss-wide"><img src="./logo3.png"></a>
     <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="./index.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Dashboard</a>
-      <a href="https://smarterfridges.w3spaces.com" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Hardware</a>
-      <a href="./software/sware.html" class="w3-bar-item w3-button"><i></i> Software</a>
-      <a href="./About/index.html" class="w3-bar-item w3-button"><i></i> About</a>
+    <div class="hcss-right hcss-hide-small">
+      <a href="./index.html" class="hcss-bar-item hcss-button"><i class="fa fa-th"></i>Dashboard</a>
+      <a href="https://smarterfridges.hcssspaces.com" class="hcss-bar-item hcss-button"><i class="fa fa-user"></i> Hardware</a>
+      <a href="./software/index.html" class="hcss-bar-item hcss-button"><i></i> Software</a>
+      <a href="./About/index.html" class="hcss-bar-item hcss-button"><i></i> About</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+    <a href="javascript:void(0)" class="hcss-bar-item hcss-button hcss-right hcss-hide-large hcss-hide-medium" onclick="hcss_open()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="./index.html" onclick="w3_close()" class="w3-bar-item w3-button">Dashboard</a>
-  <a href="https://smarterfridges.w3spaces.com" onclick="w3_close()" class="w3-bar-item w3-button">Hardware</a>
-  <a href="./software/sware.html" onclick="w3_close()" class="w3-bar-item w3-button">Software</a>
-  <a href="./About/index.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+<nav class="hcss-sidebar hcss-bar-block hcss-black hcss-card hcss-animate-left hcss-hide-medium hcss-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="hcss_close()" class="hcss-bar-item hcss-button hcss-large hcss-padding-16">Close ×</a>
+  <a href="./index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Dashboard</a>
+  <a href="https://smarterfridges.hcssspaces.com" onclick="hcss_close()" class="hcss-bar-item hcss-button">Hardware</a>
+  <a href="./software/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Software</a>
+  <a href="./About/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">About</a>
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Smarter Fridges</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Smarter Fridges</span><br>
-    <span class="w3-large">Changing the way food is monitored in your fridge</span>
-    <p><a href="./About/index.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
+<header class="bgimg-1 hcss-display-container hcss-grayscale-min" id="home">
+  <div class="hcss-display-left hcss-text-white" style="padding:48px">
+    <span class="hcss-jumbo hcss-hide-small">Smarter Fridges</span><br>
+    <span class="hcss-xxlarge hcss-hide-large hcss-hide-medium">Smarter Fridges</span><br>
+    <span class="hcss-large">Changing the way food is monitored in your fridge - attainable for everyone!</span>
+    <p><a href="./About/index.html" class="hcss-button hcss-white hcss-padding-large hcss-large hcss-margin-top hcss-opacity hcss-hover-opacity-off">Learn more</a></p>
   </div> 
-  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <a href="mailto:fjhudson@outlook.com?subject=I am interested in your idea">businesses click here</a>
-  </div>
 </header>
 
-<!-- <div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center"></h3>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="./About/s2.jpg" onmouseover="gif()" height="auto" width="auto">
-    </div> -->
-
-<div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center"></h3>
-</div>
-
-  <p class="w3-center w3-large">OUR PRODUCTS</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-half">
-      <i class="camera"><img src="./Package1_SF_Hardware.jpg" width="640" height="360"></i>
-      <p class="w3-large">Camera only</p>
-      <p>This is the camera for smarter fridges built in with the Smarter Fridges AI that can decide weather a product is still in the fridge.</p>
+  <p class="hcss-center hcss-large">OUR PRODUCTS</p>
+  <div class="hcss-row-padding hcss-center" style="margin-top:64px">
+    <div class="hcss-half">
+      <i class="camera"><img src="./Package1_SF_Hardware.jpg" width="620" height="340"></i>
+      <p class="hcss-large">$149.99</p>
+      <p>A Smarter Fridges Camera for any fridge with AI that can detect expiry dates and whether a product is still in the fridge, letting you know when to restock.</p>
     </div>
-    <div class="w3-half">
-      <i class="camera"><img src="./Package2_SF_Hardware.jpg" width="640" height="360"></i>
-      <p class="w3-large">Camera and Fridge</p>
+    <div class="vl"></div>
+    <div class="hcss-half">
+      <i class="camera"><img src="./Package2_SF_Hardware.jpg" width="620" height="340"></i>
+      <p class="hcss-large">$2,999.00</p>
+      <p>Smarter Fridges Camera complete with fridge and AI that can detect expiry dates and whether a product is still in the fridge, letting you know when to restock.</p>
       <p></p>
     </div>
   </div>
- 
+
+  <br>
+  <br>
+  <div class="hcss-container hcss-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="hcss-center">CONTACT</h3> 
+ <!-- <h4 class="hcss-center">Manager: Hudson Foster<h4> -->
+  <p class="hcss-center hcss-large">Want to learn more? E-mail us</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-envelope fa-fw hcss-xxlarge hcss-margin-right"> </i> Email: smarterfridges4u@gmail.com</p>
+    <br>
+        <a href="mailto:smarterfridges4u@gmail.com">
+        <button class="hcss-button hcss-black" >
+           <i class="fa fa-paper-plane"></i> SEND E-MAIL
+        </button>
+      </p>
+ </a>
 <script>
 // Modal Image Gallery
 function onClick(element) {
@@ -134,7 +202,7 @@ function onClick(element) {
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 
-function w3_open() {
+function hcss_open() {
   if (mySidebar.style.display === 'block') {
     mySidebar.style.display = 'none';
   } else {
@@ -143,7 +211,7 @@ function w3_open() {
 }
 
 // Close the sidebar with the close button
-function w3_close() {
+function hcss_close() {
     mySidebar.style.display = "none";
 }
 </script>
