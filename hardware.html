@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Smarter Fridges</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./hcss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./hover.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+    body, html {
+      height: 100%;
+      line-height: 1.8;
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("../background.jpg");
+      min-height: 100%;
+    }
+
+    .camera {
+    width: 640;
+    height: 360;
+    }
+
+
+    .hcss-bar .hcss-button {
+      padding: 16px;
+    }
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+.bob {
+  position: relative;
+  animation-name: example;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+}
+
+.blue {
+  background-color: #80B0B2;
+}
+
+@keyframes example {
+  0%   {background-color:#80B0B2; left:-200px; top:0px;}
+  25%  {background-color:#80B0B2; left:200px; top:0px;}
+  26%  {background-color:#80B0B2; left:-200px; top:0px;}
+  75%  {background-color:#80B0B2; left:200px; top:0px;}
+  76% {background-color:#80B0B2; left:-200px; top:0px;}
+  99% {background-color: #80B0B2; left:200px; top:0px;}
+  100% {background-color: #80B0B2; left:-200px; top:0px}
+    </style>
+  </head>
+<script src="https://kit.fontawesome.com/7717deab00.js" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J7Q43TX1E9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J7Q43TX1E9');
+</script>
+
+<body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDe-ViJfViDvaAlYFtaQnxt3QDss0zfOw",
+    authDomain: "smarter-fridges.firebaseapp.com",
+    projectId: "smarter-fridges",
+    storageBucket: "smarter-fridges.appspot.com",
+    messagingSenderId: "803833459732",
+    appId: "1:803833459732:web:fdf371fd5ad38aa168e301",
+    measurementId: "G-KM90FT00VE"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+<!-- Navbar (sit on top) -->
+<div class="hcss-top">
+  <div class="hcss-bar hcss-white hcss-card" id="myNavbar">
+    <a href="./home.html" class="hcss-bar-item hcss-button hcss-wide"><img src="./logo3.png"></a>
+    <!-- Right-sided navbar links -->
+    <div class="hcss-right hcss-hide-small">
+      <a href="./index.html" class="hcss-bar-item hcss-button"><i class="fa-solid fa-th"></i>Dashboard</a>
+      <a href="../hardware.html" class="hcss-bar-item hcss-button"><i class="fa-solid fa-microchip"></i> Hardware</a>
+      <a href="./software/index.html" class="hcss-bar-item hcss-button"><i class="fa-solid fa-mobile"></i> Software</a>
+      <a href="./About/index.html" class="hcss-bar-item hcss-button"><i class="fa-solid fa-circle-info"></i> About</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="hcss-bar-item hcss-button hcss-right hcss-hide-large hcss-hide-medium" onclick="hcss_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div class="blue">
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="hcss-sidebar hcss-bar-block hcss-black hcss-card hcss-animate-left hcss-hide-medium hcss-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="hcss_close()" class="hcss-bar-item hcss-button hcss-large hcss-padding-16">Close ×</a>
+  <a href="./index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Dashboard</a>
+  <a href="../hardware.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Hardware</a>
+  <a href="./software/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Software</a>
+  <a href="./About/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">About</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 hcss-display-container hcss-grayscale-min" id="home">
+  <div class="hcss-display-right hcss-text-white" style="padding:48px">
+    <span class="hcss-jumbo hcss-hide-small">Hardware</span><br>
+    <span class="hcss-xxlarge hcss-hide-large hcss-hide-medium">Hardware</span><br>
+    <p><a href="#🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟" class="hcss-button hcss-white hcss-padding-large hcss-large hcss-margin-top hcss-opacity hcss-hover-opacity-off">buy now</a></p>
+  </div> 
+</header>
+
+  <p class="hcss-center hcss-large">OUR PRODUCTS</p>
+<div class="hcss-center">
+<iframe src="./assets/dropdown.html" width="1145" height="600" style="border: none;" id="🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟">
+</div>
+</body>
+<html>

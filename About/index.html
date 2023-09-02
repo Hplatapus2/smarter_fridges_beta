@@ -19,13 +19,103 @@
     .bgimg-1 {
       background-position: center;
       background-size: cover;
-      background-image: url("https://www.jbhifi.com.au/cdn/shop/products/523201-Product-0-I-637741143759267611_d4dbb8ae-927b-42d6-8697-80441ea79ab6.jpg?v=1675673512");
+      background-image: url("../background.jpg");
       min-height: 100%;
     }
 
     .hcss-bar .hcss-button {
       padding: 16px;
     }
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
     </style>
   </head>
 
@@ -39,6 +129,8 @@
   gtag('config', 'G-J7Q43TX1E9');
 </script>
 
+<script src="https://kit.fontawesome.com/7717deab00.js" crossorigin="anonymous"></script>
+
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -48,9 +140,9 @@
     <!-- Right-sided navbar links -->
     <div class="hcss-right hcss-hide-small">
       <a href="./index.html" class="hcss-bar-item hcss-button"><i class="fa fa-th"></i>Dashboard</a>
-      <a href="https://smarterfridges.hcssspaces.com" class="hcss-bar-item hcss-button"><i class="fa fa-user"></i> Hardware</a>
-      <a href="../software/index.html" class="hcss-bar-item hcss-button"><i></i> Software</a>
-      <a href="" class="hcss-bar-item hcss-button"><i></i> About</a>
+      <a href="../hardware.html" class="hcss-bar-item hcss-button"><i class="fa fa-user"></i> Hardware</a>
+      <a href="../software/index.html" class="hcss-bar-item hcss-button"><i class="fa-solid fa-mobile"></i> Software</a>
+      <a href="" class="hcss-bar-item hcss-button"><i class="fa-solid fa-circle-info"></i> About</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -64,7 +156,7 @@
 <nav class="hcss-sidebar hcss-bar-block hcss-black hcss-card hcss-animate-left hcss-hide-medium hcss-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="hcss_close()" class="hcss-bar-item hcss-button hcss-large hcss-padding-16">Close ×</a>
   <a href="./index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Dashboard</a>
-  <a href="https://smarterfridges.hcssspaces.com" onclick="hcss_close()" class="hcss-bar-item hcss-button">Hardware</a>
+  <a href="../hardware.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Hardware</a>
   <a href="../software/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">Software</a>
   <a href="./About/index.html" onclick="hcss_close()" class="hcss-bar-item hcss-button">About</a>
 </nav>
@@ -74,24 +166,120 @@
   <div class="hcss-display-left hcss-text-white" style="padding:48px">
     <span class="hcss-jumbo hcss-hide-small">About</span><br>
     <span class="hcss-xxlarge hcss-hide-large hcss-hide-medium">About</span><br>
-    <p><a href="./index.html" class="hcss-button hcss-white hcss-padding-large hcss-large hcss-margin-top hcss-opacity hcss-hover-opacity-off">Try it out</a></p>
   </div> 
   <div class="hcss-display-bottomleft hcss-text-grey hcss-large" style="padding:24px 48px">
-    <a href="mailto:fjhudson@outlook.com?subject=I am interested in your idea">businesses click here</a>
   </div>
 </header>
 
-<div class="hcss-container" style="padding:128px 16px" id="team">
-  <h3 class="hcss-center"></h3>
-  <div class="hcss-row-padding hcss-grayscale" style="margin-top:64px">
-    <div class="hcss-col l3 m6 hcss-margin-bottom">
-      <img src="./s2.jpg" onmouseover="gif()" height="auto" width="auto">
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 8</div>
+    <img src="./slideshow/s1.jpg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 8</div>
+    <img src="./slideshow/s3.jpg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 8</div>
+    <img src="./slideshow/s4.jpg" style="width:90%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 8</div>
+    <img src="./slideshow/s5.jpg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 8</div>
+    <img src="./slideshow/s6.jpg" style="width:90%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 8</div>
+    <img src="./slideshow/s7.jpg" style="width:90%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 8</div>
+    <img src="./slideshow/s8.jpg" style="width:90%">
+  </div>  
+
+  <div class="mySlides">
+    <div class="numbertext">8 / 8</div>
+    <img src="./slideshow/s9.jpg" style="width:90%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s1.jpg" style="width:90%" onclick="currentSlide(1)" alt="The Woods">
     </div>
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s3.jpg" style="width:90%" onclick="currentSlide(2)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s4.jpg" style="width:90%" onclick="currentSlide(3)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s5.jpg" style="width:90%" onclick="currentSlide(4)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s6.jpg" style="width:90%" onclick="currentSlide(5)" alt="Snowy Mountains">
+    </div>
+        <div class="column">
+      <img class="demo cursor" src="./slideshow/s7.jpg" style="width:90%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+        <div class="column">
+      <img class="demo cursor" src="./slideshow/s8.jpg" style="width:90%" onclick="currentSlide(7)" alt="Snowy Mountains">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./slideshow/s9.jpg" style="width:90%" onclick="currentSlide(8)" alt="Snowy Mountains">
+    </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 <div class="hcss-container" style="padding:128px 16px" id="work">
   <h3 class="hcss-center"></h3>
 </div>
-<div class="bgimg-1">
 
 </div>
 
