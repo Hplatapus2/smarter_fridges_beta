@@ -58,7 +58,7 @@
   <canvas id="canvas" hidden></canvas>
   <div id="output" hidden>
     <div id="outputMessage">No QR code detected.</div>
-    <div hidden><b>Data:</b> <span id="outputData"></span></div>
+    <div hidden><b>Data:</b> <span id="outputData" onchange="jeff()"></span><span><button onclick="jeff()">copy</button></span></div>
   </div>
   <script>
     var video = document.createElement("video");
@@ -77,6 +77,19 @@
       canvas.strokeStyle = color;
       canvas.stroke();
     }
+
+    function jeff() {
+  // Get the text field
+  var copyText = document.getElementById("oututData");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  
+}
 
     // Use facingMode: environment to attemt to get the front camera on phones
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {

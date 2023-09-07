@@ -15,6 +15,9 @@
             <a href="https://smarter-fridges-beta.w3spaces.com/assets/index.html">
               <h1>Back to homepage</h1>
             </a>
+            <label for="fridge">fride name</label>
+            <input id="fridge" name="fridge" type="text">
+            <input name="fridge" type="submit" onclick="cheese()">
             <div class="scan">
             <details>
             <summary><h1>Scan Product</h1></summary>
@@ -78,6 +81,11 @@
               <input id="B" type="radio" name="item" value="B">
               <label for="D">Door</label>
               <input id="D" type="radio" name="item" value="D">
+             </div>
+             <div>
+             <label for="fridgeName">Fridge Name</label>
+             <select id="fridgeName" name="fridgeName">
+            <option id="cheese"></option>
              </div>              
               <div class="center">
               <label for="date">Use By Date</label>
@@ -134,6 +142,10 @@ fs.writeFile('data.json', jsonString, err => {
 });
 
 }
+}
+function cheese() {
+localStorage.setItem("fridge")
+localStorage.getItem("cheese")
 }
 </script>
 

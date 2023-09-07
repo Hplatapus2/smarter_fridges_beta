@@ -1,11 +1,4 @@
 
-
-/* ===
-ml5 Example
-Webcam Image Classification using a pre-trained customized model and p5.js
-This example uses p5 preload function to create the classifier
-=== */
-
 // Classifier Variable
 let classifier;
 // Model URL
@@ -44,6 +37,7 @@ function draw() {
   textSize(16);
   textAlign(CENTER);
   text(label, width / 2, height - 4);
+  text("AI food recognition", width / 2, height / 10,)
 }
 
 // Get a prediction for the current video frame
